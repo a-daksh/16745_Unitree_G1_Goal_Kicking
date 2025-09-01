@@ -36,7 +36,7 @@ function visualize_contact(J, p_c; r=0.11, ball_center=[0.0, 0.11])
 
      # Create figure and axis
     fig = Figure(size = (800, 600))  # Use size instead of resolution
-    ax = Axis(fig[1, 1], limits=(ball_center[1] - 2 * r, ball_center[1] + 2 * r,ball_center[2] - 2 * r, ball_center[2] + 2 * r), title = "Ball Contact Point Visualization", xlabel = "X Position", ylabel = "Z Position")
+    ax = Axis(fig[1, 1], limits=(ball_center[1] - 2 * r, ball_center[1] + 2 * r,ball_center[2] - 2 * r, ball_center[2] + 2 * r), title = "Ball Contact Point Visualization", xlabel = "X (m)", ylabel = "Z (m)")
     
     # Draw ball as a circle
     θ = LinRange(0, 2π, 100)
@@ -74,7 +74,7 @@ function dynamics_rollout(J, q_des, q_i; N=100, dt=0.01, m=0.43)
     @assert (norm(q_des .- x[end, 1:2], Inf)) < 1e-6
     # Create a plot using CairoMakie
     fig = Figure(size = (800, 600))
-    ax = Axis(fig[1, 1], title = "Dynamics Rollout", xlabel = "X (m)", ylabel = "Y (m)")
+    ax = Axis(fig[1, 1], title = "Dynamics Rollout", xlabel = "X (m)", ylabel = "Z (m)")
 
     # Plot position trajectory using lines
     lines!(ax, x[:, 1], x[:, 2], label="Position (q)")

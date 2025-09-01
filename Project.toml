@@ -1,4 +1,0 @@
-[deps]
-CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
-MatrixEquations = "99c1a7ee-ab34-5fd5-8076-27c950a045f4"
-MuJoCo = "1c101251-5e0f-4746-b44c-0728d433b68a"

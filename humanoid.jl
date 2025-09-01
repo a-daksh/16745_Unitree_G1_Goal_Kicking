@@ -10,10 +10,7 @@ using ForwardDiff
 using Quaternions
 using CoordinateTransformations
 
-current_dir = abspath(@__DIR__)
-parent_dir = dirname(current_dir)
-
-const URDFPATH = joinpath(parent_dir, "unitree_robots", "g1", "urdf", "g1_29dof.urdf")
+const URDFPATH = joinpath(@__DIR__, "unitree_robots", "g1", "urdf", "g1_29dof.urdf")
 
 function attach_left_ankle!(mech::Mechanism{T}; revolute::Bool=true, fixed::Bool=false) where T
     # Get the relevant bodies and joints
@@ -247,7 +244,7 @@ end
 function initialize_visualizer(g1::G1Humanoid)
     vis = Visualizer()
     delete!(vis)
-    cd(joinpath(parent_dir, "unitree_robots","g1","urdf"))
+    cd(joinpath(@__DIR__, "unitree_robots","g1","urdf"))
     mvis = MechanismVisualizer(g1.mech, URDFVisuals(URDFPATH), vis)
     cd(@__DIR__)
     return mvis

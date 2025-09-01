@@ -1,4 +1,5 @@
 using Printf
+import ForwardDiff as FD
 
 # Quick and dirty newton solver
 function newton(residual, z_guess; active_inds = nothing, verbose = true, max_iters = 200, tol = 1e-8)
